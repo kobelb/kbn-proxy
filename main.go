@@ -33,5 +33,5 @@ func main() {
 
 	// handle all requests to your server using the proxy
 	http.HandleFunc("/", ProxyRequestHandler(proxy))
-	log.Fatal(http.ListenAndServe(":5601", nil))
+	log.Fatal(http.ListenAndServeTLS(":5601", "kibana.crt", "kibana.key", nil))
 }
